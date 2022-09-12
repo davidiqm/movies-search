@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { useParams } from 'react-router-dom'
 
 import BackButton from '../components/BackButton.jsx'
+import { Title as MovieTitle } from '../components/Title.jsx'
 
 const API_KEY = "a57904e5"
 
@@ -31,13 +32,19 @@ function MovieDetails() {
   const { Title, Poster, Actors, Metascore, Plot } = movie
 
   return (
-    <div>
-      <BackButton />
-      <h1>{Title}</h1>
-      <img src={Poster} alt={Poster} />
-      <h3>{Actors}</h3>
-      <span>{Metascore}</span>
-      <p>{Plot}</p>
+    <div className='pb-10'>
+      <div className='max-w-5xl mx-auto bg-white rounded-b-lg text-black shadow-xl'>
+        <div className='pt-5'>
+          <BackButton  />
+        </div>
+        <div className='py-5 pb-10 px-28'>
+          <MovieTitle>{Title}</MovieTitle>
+          <img src={Poster} alt={Poster} className="mx-auto my-3" />
+          <h3>Reparto: {Actors}</h3>
+          <span>Puntaje Metascore: {Metascore}</span>
+          <p>Trama: {Plot}</p>
+        </div>
+      </div>
     </div>
   )
 

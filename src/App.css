@@ -1,9 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    --tw-bg-opacity: 1;
+    background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+    color: white;
+}
+
 .App {
-    padding-top: 36px;
     text-align: center;
 }
 
-.search-form-wrapper {
+/* .search-form-wrapper {
     display: flex;
     justify-content: center;
 }
@@ -19,4 +28,4 @@
 .movies-list-item {
     margin-bottom: 24px;
     width: 48%;
-}
+} */

@@ -1,8 +1,9 @@
 import { useState } from "react"
+import PropTypes from "prop-types"
 
 const API_KEY = "a57904e5"
  
-export default function SearchForm(props) {
+function SearchForm({onResults}) {
     const [inputMovie, setInputMovie] = useState(''); 
 
     const handleInputChange = (event) => {
@@ -22,8 +23,7 @@ export default function SearchForm(props) {
 
             const {Search = [], totalResults = 0} = results
             
-            props.onResults(Search)
-            props.onTotalResults(totalResults)
+            onResults(Search, totalResults)
         })
         .catch(reason => console.error(reason))
     }
@@ -31,11 +31,11 @@ export default function SearchForm(props) {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <div className="field has-addons">
-                    <div className="control">
-                        <input type="text" className="input" placeholder="Buscar película" name="movie" onChange={handleInputChange} />
+                <div className="flex">
+                    <div className="">
+                        <input type="text" placeholder="Buscar película" name="movie" onChange={handleInputChange} className="border border-r-0 rounded-l w-72 px-2 py-2 focus:ring-2 focus:outline-none focus:ring-blue-500" />
                     </div>
-                    <div className="control">
+                    <div className="border border-l-0 rounded-r px-5 py-2 bg-blue-500 text-white">
                         <button type="submit" className="button is-info">Buscar</button>
                     </div>
                 </div>
@@ -45,3 +45,9 @@ export default function SearchForm(props) {
         </div>
     )
 }
+
+SearchFrom.propTypes = {
+    onResults: PropTypes.func
+}
+
+export default SearchForm

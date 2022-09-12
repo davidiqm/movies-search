@@ -4,7 +4,6 @@ import Home from './pages/Home.jsx'
 import MovieDetails from './pages/MovieDetails.jsx'
 import NotFound from './pages/NotFound.jsx'
 
-import 'bulma/css/bulma.css'
 import './App.css'
 
 function App() {
