@@ -11,8 +11,8 @@ function App() {
   return (
     <div className='App'>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='detail/:id' element={<MovieDetails />} />
+        <Route exac path='/' element={<Home />} />
+        <Route path='/detail/:id' element={<MovieDetails />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </div>
