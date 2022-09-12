@@ -46,7 +46,7 @@ function SearchForm({onResults}) {
     )
 }
 
-SearchFrom.propTypes = {
+SearchForm.propTypes = {
     onResults: PropTypes.func
 }
 
