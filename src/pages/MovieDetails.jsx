@@ -1,12 +1,16 @@
 import { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
+import { useParams } from 'react-router-dom'
+
+import BackButton from '../components/BackButton.jsx'
 
 const API_KEY = "a57904e5"
 
-function MovieDetails(props) {
+function MovieDetails() {
   const [movie, setMovie] = useState({})
+  const {id} = useParams()
 
-  const fetchMovie = async ({id}) => {
+  const fetchMovie = async (id) => {
     try {
       fetch(`http://www.omdbapi.com/?i=${id}&apikey=${API_KEY}`)
       .then(response => response.json())
@@ -19,20 +23,16 @@ function MovieDetails(props) {
     }
   }
 
-  const goBack = () => {
-    window.history.back()
-  }
-
   useEffect(() => {
-    console.log(props.params)
-    // fetchMovie({id})
+    console.log(id)
+    fetchMovie(id)
   }, [])
 
   const { Title, Poster, Actors, Metascore, Plot } = movie
 
   return (
     <div>
-      <button onClick={goBack}>Ir a Casa</button>
+      <BackButton />
       <h1>{Title}</h1>
       <img src={Poster} alt={Poster} />
       <h3>{Actors}</h3>

@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
-function Movie({id, title, year, poster}) {
+function  Movie({id, title, year, poster}) {
   return (
-    <Link to={`/detail/${id}`} className='card'>
+    <NavLink to={`/detail/${id}`} className='card'>
       {/* IMAGEN */}
       <div className="card-image">
         <figure className='image'>
@@ -20,7 +20,7 @@ function Movie({id, title, year, poster}) {
           </div>
         </div>
       </div>
-    </Link>
+    </NavLink>
   )
 }
 
