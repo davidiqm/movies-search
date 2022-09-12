@@ -11,7 +11,7 @@ function App() {
   return (
     <div className='App'>
       <Routes>
-        <Route exact path='/' element={<Home />} />
+        <Route path='/' element={<Home />} />
         <Route path='detail/:id' element={<MovieDetails />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
