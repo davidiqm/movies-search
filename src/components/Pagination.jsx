@@ -10,15 +10,15 @@ function Pagination({ totalResults, onResults, inputMovie }) {
   const [numberPages, setNumberPages] = useState(Math.ceil(totalResults / 10))
   const [flag, setFlag] = useState(false)
 
-  console.log('child rendered', page, numberPages)
+  // console.log('child rendered', page, numberPages)
 
   useEffect(() => {
     if (flag) {
-      fetch(`http://www.omdbapi.com/?s=${inputMovie}&page=${page}&apikey=${API_KEY}`)
+      fetch(`https://www.omdbapi.com/?s=${inputMovie}&page=${page}&apikey=${API_KEY}`)
         .then(response => response.json())
         .then(results => {
-          console.log(`http://www.omdbapi.com/?s=${inputMovie}&page=${page}&apikey=${API_KEY}`)
-          console.log(results)
+          // console.log(`http://www.omdbapi.com/?s=${inputMovie}&page=${page}&apikey=${API_KEY}`)
+          // console.log(results)
 
           const { Search = [], totalResults = 0 } = results
 

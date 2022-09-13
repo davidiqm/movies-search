@@ -16,10 +16,10 @@ function SearchForm({ onResults }) {
     event.preventDefault()
     // alert(inputMovie)
 
-    fetch(`http://www.omdbapi.com/?s=${inputMovie}&page=1&apikey=${API_KEY}`)
+    fetch(`https://www.omdbapi.com/?s=${inputMovie}&page=1&apikey=${API_KEY}`)
       .then(response => response.json())
       .then(results => {
-        console.log(results)
+        // console.log(results)
 
         const { Search = [], totalResults = 0 } = results
 
