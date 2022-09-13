@@ -13,7 +13,7 @@ function MovieDetails() {
 
   const fetchMovie = async (id) => {
     try {
-      fetch(`http://www.omdbapi.com/?i=${id}&apikey=${API_KEY}`)
+      fetch(`https://www.omdbapi.com/?i=${id}&apikey=${API_KEY}`)
         .then(response => response.json())
         .then(movie => {
           console.log(movie)
