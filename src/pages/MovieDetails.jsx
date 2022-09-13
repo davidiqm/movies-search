@@ -3,29 +3,28 @@ import PropTypes from 'prop-types'
 import { useParams } from 'react-router-dom'
 
 import BackButton from '../components/BackButton.jsx'
-import { Title as MovieTitle } from '../components/Title.jsx'
+import { Title as MovieTitle } from '../components/Title'
 
 const API_KEY = "a57904e5"
 
 function MovieDetails() {
   const [movie, setMovie] = useState({})
-  const {id} = useParams()
+  const { id } = useParams()
 
   const fetchMovie = async (id) => {
     try {
       fetch(`http://www.omdbapi.com/?i=${id}&apikey=${API_KEY}`)
-      .then(response => response.json())
-      .then(movie => {
+        .then(response => response.json())
+        .then(movie => {
           console.log(movie)
           setMovie(movie)
-      })
+        })
     } catch (err) {
       console.error(err)
     }
   }
 
   useEffect(() => {
-    console.log(id)
     fetchMovie(id)
   }, [])
 
@@ -35,7 +34,7 @@ function MovieDetails() {
     <div className='pb-10'>
       <div className='max-w-5xl mx-auto bg-white rounded-b-lg text-black shadow-xl'>
         <div className='pt-5'>
-          <BackButton  />
+          <BackButton />
         </div>
         <div className='py-5 pb-10 px-28'>
           <MovieTitle>{Title}</MovieTitle>
