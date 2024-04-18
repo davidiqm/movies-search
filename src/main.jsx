@@ -8,8 +8,8 @@ import App from './App'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
-  <BrowserRouter /*basename={path}*/>
+  <HashRouter /*basename={path}*/>
     <App />
-  </BrowserRouter>
+  </HashRouter>
   // </React.StrictMode>
 )
